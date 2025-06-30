@@ -1,0 +1,28 @@
+#vocareaum plugin files
+vocareum_*.txt
+*.json
+.grading/
+
+#env files
+.venv
+.env
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+__pycache__/
+*.pyc
+
+# Packaging metadata
+*.egg-info/
+dist/
+build/
+
+# Lock files (if applicable)
+*.lock
+
+# macOS
+.DS_Store
+.vscode
