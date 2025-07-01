@@ -17,15 +17,19 @@ help:
 # Setup development environment
 setup: clean
 	$(MAKE) -C ./task_1 setup
+	$(MAKE) -C ./task_2 setup
 
 # Run all tests
 test:
 	$(MAKE) -C ./task_1 test
+	$(MAKE) -C ./task_2 test
 
 # Run formatting and type checking
 lint:
 	$(MAKE) -C ./task_1 lint
+	$(MAKE) -C ./task_2 lint
 
 # Clean cache files
 clean:
 	$(MAKE) -C ./task_1 clean
+	$(MAKE) -C ./task_2 clean
