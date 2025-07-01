@@ -40,20 +40,26 @@ You are provided with some boilerplate code inside `task 1`, your task is to bui
 
 Notice how we the `_cli` code was written before any test for it; moreover, we don't plan to write tests for it. This is because:
 1. There is not much value in doing so, what it does is straight forward and we decided to trust completely its functionality (makes sense only for extremely simple code).
-2. Writing tests that interact with the command line is not trivial in Python, it may make them run slower, which affect productivity.
+2. Writing tests that interact with the command line is not trivial in Python (in Rust is straight forward), it may make them run slower, which affects productivity.
 3. The core of functionality of our tool will be in the `main` function and that is what we will be working with. 
 
-You goal then is to add code to `tests/test_main.py` and `src/main.py` so that it satisfy all of the requirements. One of the nice qualities of this task is that you can add the functionality incrementally, which is a critical aspect of the TDD approach. Now do the rest of the code on your own, follow [Build Your Own JSON Parser](https://codingchallenges.fyi/challenges/challenge-json-parser/) as a guide to add complexity incrementally. Feel free to add any additional modules you think you need, but try to implement everything from scratch!
+You goal then is to add code to `tests/test_main.py` and `src/main.py` so that it satisfy all of the requirements. One of the nice qualities of this task is that you can add the functionality incrementally, which is a critical aspect of the TDD approach. Now do the rest of the code on your own, follow [Build Your Own JSON Parser](https://codingchallenges.fyi/challenges/challenge-json-parser/) as a guide to add complexity incrementally. Feel free to add any additional modules you think you need, but you can add all test cases from to `test_main.py` using `pytest.mark.paramtrize`. Try to implement everything from scratch!
 
 ### Task 2: Building a Compresison Tool
 
-Yeah, just write a different task here, all pointing to the same goal. Note that the time you write in the task is not how much you spend building it, but an estimate of how long a learner with the needed prerequisites would spend completing the task.
+In the example above we wrote all test cases to to the same function. That highlights an approach that is great for productivity: if we only test the API, we can change the implementation any time we want and we wouldn't need to modify the tests. However, it is sometimes harder to think of the edge cases of our solutions in this case. We will see one case here.
 
-### Optional tasks:
+We will build a compression tool based on a [Huffman Tree](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/Huffman.html#huffman-coding-trees). We will again build a command line tool, that takes a file as input, but this time produces another file as output, together with some exit codes. The process to achieve this is as follows:
+1. Read the input file.
+2. Count the number of occurrences of each character in the file.
+3. Build a huffman tree based on the character counts.
+4. Build a table to map each character to its corresponding code.
+5. Build a header that can help you restore the huffman tree.
+6. Serialize the contents of the file in #1.
+7. Put the header and the output from #6 into a new file.
 
-Here you write anything that is not stricktly required for the learning experience, but that could provide furhter insights to the learners.
+We won't do all of it here. You will be given some code and your job is to add missing test cases and implementation. In particular, we will be focusing on step #3.
 
 
-## Future work
 
-* Here you list things you think are interesting to make the lab better, but were left out due to time constrains. Hopefully some learner wants to help you after you have shown the value the labs can create...
+### Task 3: Building a Web App
