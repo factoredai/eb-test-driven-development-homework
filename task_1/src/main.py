@@ -1,8 +1,6 @@
 import pathlib
 from collections.abc import Iterator
 
-from src import parser, lexer
-
 
 def main(file: pathlib.Path) -> int:
     ## homework:start
