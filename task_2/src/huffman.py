@@ -23,14 +23,5 @@ def create_prefix_code_table(tree: HuffmanTree) -> dict[str, str]:
         return {key: "0"}
 
     result: dict[str, str] = {}
-    stack = [(tree, "")]
-    while stack:
-        root, code = stack.pop()
-        if root.children is not None:
-            left, right = root.children
-            stack.append((left, code + "0"))
-            stack.append((right, code + "1"))
-            continue
-        assert root.key is not None
-        result[root.key] = code
-    return result
+    ## homework:start
+    ## homework:end
